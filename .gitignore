@@ -1,0 +1,30 @@
+.DS_Store
+data/__pycache__/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+data/__pycache__/
+
+
+# C extensions
+*.so
+*.dll
+*.dylib
+
+# Distribution / packaging
+.Python
+env/
+pythonenv/
+venv/
+build/
+develop-eggs/
+dist/
+.eggs/
+*.egg-info/
+.tox/
+.coverage
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/

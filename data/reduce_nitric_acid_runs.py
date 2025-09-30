@@ -141,7 +141,10 @@ def merge_icpms_data():
     #     columns='element_description', index=['Sample Name'])
 
     # save csv
-    # runs.to_csv('concentrations_mol_per_mol_Ca_Mg.csv')
+    # filter columns of interest
+    runs = runs[['is_sample', 'Sample Name', 'element',
+        'element_description', 'complete_sample_name', 'is_blank', 'is_sample_blank',
+        'is_standard', 'has_iodine', 'inferred_mol/mol', 'run_id']]
     runs.to_csv('nitric_acid_runs_reduced.csv')
     # arag_or_jls.to_csv('arag_jls_mol_per_mol_Ca_Mg.csv')
     

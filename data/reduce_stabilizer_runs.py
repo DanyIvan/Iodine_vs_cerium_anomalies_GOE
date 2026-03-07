@@ -114,6 +114,11 @@ def make_calibration_curves_ppb(data, run_num, var='CPS_Te_normalized'):
 
     data['inferred_ppb_zero_intercept'] =\
         data[var]/data['zero_interc_slope']
+    
+     # apply dilution factor to cpnvert from ppb in solutions to ppb in samples
+    df = lambda x : x * 4000
+    data['inferred_ppb_zero_intercept'] = \
+        data['inferred_ppb_zero_intercept'].apply(df)
     return data
 
 def make_drift_correction(data, run_num=8, var='CPS'):

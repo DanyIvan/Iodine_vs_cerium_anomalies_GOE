@@ -377,6 +377,11 @@ def merge_icpms_data_ppb():
     zero_conc = lambda x : 0 if x <0 else x
     runs['inferred_ppb_zero_intercept'] = \
         runs['inferred_ppb_zero_intercept'].apply(zero_conc)
+    
+    # apply dilution factor to cpnvert from ppb in solutions to ppb in samples
+    df = lambda x : x * 4000
+    runs['inferred_ppb_zero_intercept'] = \
+        runs['inferred_ppb_zero_intercept'].apply(df)
 
     runs = runs.reset_index(drop=True)
 

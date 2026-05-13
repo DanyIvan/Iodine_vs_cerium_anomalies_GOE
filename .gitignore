@@ -4,6 +4,7 @@ data/__pycache__/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 data/__pycache__/
+plots/
 
 
 # C extensions

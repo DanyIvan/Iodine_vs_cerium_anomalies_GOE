@@ -116,7 +116,7 @@ def make_calibration_curves_ppb(data, run_num, var='CPS_Te_normalized'):
         data[var]/data['zero_interc_slope']
     
      # apply dilution factor to cpnvert from ppb in solutions to ppb in samples
-    df = lambda x : x * 4000
+    df = lambda x : x * 5000
     data['inferred_ppb_zero_intercept'] = \
         data['inferred_ppb_zero_intercept'].apply(df)
     return data
@@ -268,9 +268,7 @@ def merge_data(ppb=False, only_Ca=False):
     return runs
 
 
-data = merge_data()
-data_Ca_norm = merge_data(only_Ca=True)
-data_ppb = merge_data(ppb=True)
-data.to_csv('stabilizer_runs_reduced.csv', index=0)
-data_Ca_norm.to_csv('stabilizer_runs_reduced_Ca_norm.csv', index=0)
-data_ppb.to_csv('stabilizer_runs_reduced_ppb.csv', index=0)
+# data = merge_data()
+# data_ppb = merge_data(ppb=True)
+# data.to_csv('stabilizer_runs_reduced.csv', index=0)
+# data_ppb.to_csv('stabilizer_runs_reduced_ppb.csv', index=0)

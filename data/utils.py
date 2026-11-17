@@ -201,13 +201,13 @@ def read_standards202405(run=8, only_Ca=False):
 
 def read_standards202405_ppb(run=8):
     if run == 8:
-        filename = 'iodine_std_20240530_alt.tsv'
+        filename = 'iodine_std_20240530.tsv'
     elif run == 9:
-        filename = 'iodine_std_20240604_alt.tsv'
+        filename = 'iodine_std_20240604.tsv'
     elif run == 10: 
-        filename = 'iodine_std_20240605_alt.tsv'
+        filename = 'iodine_std_20240605.tsv'
     elif run == 11:
-        filename = 'iodine_std_20240606_alt.tsv'
+        filename = 'iodine_std_20240606.tsv'
     path = f'calibation_standards/standards_202405/{filename}' 
 
     data = pd.read_csv(path, sep='\t')
